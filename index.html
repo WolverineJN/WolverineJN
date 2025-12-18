@@ -1,24 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Game Site</title>
+    <title>My Research Project</title>
     <style>
-        body { font-family: sans-serif; text-align: center; background-color: #1a1a1a; color: white; }
-        .game-container { margin: 20px auto; padding: 10px; border: 2px solid #444; width: 80%; }
-        iframe { border: none; }
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; background: #121212; color: #fff; }
+        .btn { padding: 15px 30px; font-size: 1.2rem; cursor: pointer; background: #007bff; border: none; color: white; border-radius: 8px; }
+        .btn:hover { background: #0056b3; }
     </style>
 </head>
 <body>
+    <h1>Application Launcher</h1>
+    <button class="btn" onclick="openApp()">Launch</button>
 
-    <h1>Welcome to My Game Portal</h1>
-    <p>Check out my first game below:</p>
-
-    <!-- This is where the game goes -->
-    <div class="game-container">
-        <iframe src="itch.io" width="800" height="600">
-            <a href="itch.io">Play more games on itch.io</a>
-        </iframe>
-    </div>
-
+    <script>
+    function openApp() {
+        // REPLACE THE URL BELOW WITH YOUR GAME LINK
+        var gameURL = "itch.io";
+        
+        var win = window.open();
+        win.document.body.style.margin = '0';
+        win.document.body.style.height = '100vh';
+        
+        var iframe = win.document.createElement('iframe');
+        iframe.style.border = 'none';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.src = gameURL;
+        
+        win.document.body.appendChild(iframe);
+    }
+    </script>
 </body>
 </html>
